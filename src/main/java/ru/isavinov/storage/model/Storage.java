@@ -15,6 +15,10 @@ public class Storage {
 
     private List<Item> items;
 
+    public Storage(){
+
+    }
+
     public Storage(Long capacity, String name, String address) {
         this.id= Counter.next();
         this.capacity = capacity;
