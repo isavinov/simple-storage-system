@@ -6,17 +6,24 @@ public class Item {
 
     private Long id;
 
+    private String name;
+
     private String code;
 
     private Double weight;
 
     private Date dueTo;
 
-    public Item(String code, Double weight, Date dueTo) {
-        this.id= Counter.next();
+    public Item(String code, String name, Double weight, Date dueTo) {
+        this.id = Counter.next();
+        this.name = name;
         this.code = code;
         this.weight = weight;
         this.dueTo = dueTo;
+    }
+
+    public Item() {
+        this.id = Counter.next();
     }
 
     public Long getId() {
