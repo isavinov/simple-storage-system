@@ -10,7 +10,7 @@
 
 <body>
 
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
     <div class="container">
         <span class="navbar-brand mb-0 h1">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-archive" viewBox="0 0 16 16">
@@ -24,7 +24,7 @@
 <div class="container">
     <div class="row allign-items-start">
         <div class="col">
-            <table class="table table-striped table-hover">
+            <table class="table table-striped">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -75,9 +75,18 @@
             </div>
             <div class="modal-body">
                 <form id="newStorageForm" action="#" th:action="@{/saveStorage}" th:object="${storage}" method="post">
-                    <p>Имя: <input type="text" th:field="*{name}"/></p>
-                    <p>Вместимость: <input type="number" th:field="*{capacity}"/></p>
-                    <p>Адрес: <input type="text" th:field="*{address}"/></p>
+                    <div class="mb-3">
+                        <label for="storageNameInput" class="form-label">Имя склада</label>
+                        <input type="text" class="form-control" id="storageNameInput" th:field="*{name}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="storageCapacityInput" class="form-label">Вместимость</label>
+                        <input type="number" class="form-control" id="storageCapacityInput" th:field="*{capacity}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="storageAddressInput" class="form-label">Адрес</label>
+                        <input type="text" class="form-control" id="storageAddressInput" th:field="*{address}">
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
