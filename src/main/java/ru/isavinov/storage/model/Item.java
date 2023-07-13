@@ -14,20 +14,24 @@ public class Item {
 
     private Date dueTo;
 
-    public Item(String code, String name, Double weight, Date dueTo) {
-        this.id = Counter.next();
-        this.name = name;
-        this.code = code;
-        this.weight = weight;
-        this.dueTo = dueTo;
-    }
+    public Item(){
 
-    public Item() {
-        this.id = Counter.next();
     }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCode() {

@@ -13,22 +13,18 @@ public class Storage {
 
     private String address;
 
-    private List<Item> items;
+    private List<Item> items = new ArrayList<>();
 
-    public Storage(){
-        this.id= Counter.next();
-    }
+    public Storage() {
 
-    public Storage(Long capacity, String name, String address) {
-        this.id= Counter.next();
-        this.capacity = capacity;
-        this.name = name;
-        this.address = address;
-        this.items = new ArrayList<>();
     }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getCapacity() {
