@@ -14,7 +14,7 @@ public class InMemoryStorageRepository implements StorageRepository{
     private Map<Long, Storage> storageMap = new HashMap<>();
 
     public InMemoryStorageRepository(){
-        storageMap.put(0L, new Storage(100L,"Name","Address"));
+
     }
 
     @Override
