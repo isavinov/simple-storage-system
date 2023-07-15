@@ -5,6 +5,7 @@ import ru.isavinov.storage.exception.ItemNotFoundException;
 import ru.isavinov.storage.exception.StorageIsFullException;
 import ru.isavinov.storage.model.Item;
 import ru.isavinov.storage.model.Storage;
+import ru.isavinov.storage.repository.ItemRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,8 +15,11 @@ public class ItemServiceImpl implements ItemService {
 
     public final StorageService storageService;
 
-    public ItemServiceImpl(StorageService storageService) {
+    public final ItemRepository itemRepository;
+
+    public ItemServiceImpl(StorageService storageService, ItemRepository itemRepository) {
         this.storageService = storageService;
+        this.itemRepository = itemRepository;
     }
 
 
@@ -49,7 +53,7 @@ public class ItemServiceImpl implements ItemService {
             throw new StorageIsFullException("Storage "+storageId+" is full");
         }
 
-        storage.getItems().add(item);
+        itemRepository.create(storageId, item);
 
 
     }

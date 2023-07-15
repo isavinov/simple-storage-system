@@ -13,14 +13,17 @@ public class Storage {
 
     private String address;
 
-    private List<Item> items;
+    private List<Item> items = new ArrayList<>();
 
-    public Storage(Long capacity, String name, String address) {
-        this.id= Counter.next();
+    public Storage() {
+
+    }
+
+    public Storage(Long id, String name, String address, Long capacity) {
+        this.id= id;
         this.capacity = capacity;
         this.name = name;
         this.address = address;
-        this.items = new ArrayList<>();
     }
 
     public Long getId() {
@@ -57,5 +60,9 @@ public class Storage {
 
     public void setItems(List<Item> items) {
         this.items = items;
+    }
+
+    public void addItem(Item item){
+        this.items.add(item);
     }
 }
