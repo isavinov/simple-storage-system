@@ -31,6 +31,11 @@ public class StorageMvcController {
         return "index";
     }
 
+    @GetMapping("/statistic")
+    public String statistic(){
+        return "statistic";
+    }
+
     @PostMapping("/saveStorage")
     public String addStorage(@ModelAttribute Storage storage){
         storageService.create(storage);
